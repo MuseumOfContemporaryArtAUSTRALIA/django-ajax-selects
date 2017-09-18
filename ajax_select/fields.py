@@ -208,7 +208,7 @@ class AutoCompleteSelectMultipleWidget(forms.widgets.SelectMultiple):
         else:
             objects = lookup.get_objects(values)
 
-        current_ids = pack_ids([int(obj) for obj in objects])
+        current_ids = pack_ids([int(obj.pk) for obj in objects])
 
         # text repr of currently selected items
         initial = [
