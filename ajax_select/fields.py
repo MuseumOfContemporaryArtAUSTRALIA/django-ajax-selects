@@ -243,7 +243,7 @@ class AutoCompleteSelectMultipleWidget(forms.widgets.SelectMultiple):
 
     def value_from_datadict(self, data, files, name):
         # eg. 'members': ['|229|4688|190|']
-        return [val for val in data.get(name, '').split('|') if val]
+        return [int(val) for val in data.get(name, '').split('|') if val]
 
     def id_for_label(self, id_):
         return '%s_text' % id_
